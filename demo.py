@@ -1,6 +1,6 @@
 import logging
 
-logging.basicConfig(level=logging.INFO)  # optional, logging also works without this line
+logging.basic_config(level=logging.INFO)  # optional, logging also works without this line
 
 
 try:
@@ -33,7 +33,7 @@ print()
 
 logging.debug("with the default logging level this message won't show")
 
-logging.setLevel(logging.DEBUG)
+logging.set_level(logging.DEBUG)
 
 logging.debug("debug output")
 logging.info("this is informational")
@@ -50,7 +50,7 @@ print()
 
 # incorrect format string will raise an exception when used
 #
-logging.basicConfig(format="%(levelname)s %(unknown)s")
+logging.basic_config(formatting="%(levelname)s %(unknown)s")
 
 try:
     # error because of incorrect format string
@@ -62,15 +62,15 @@ print()
 
 # when using logging in multiple modules create a logger per module
 #
-logging.basicConfig(format="%(asctime)s:%(levelname)-7s:%(name)s:%(message)s")
+logging.basic_config(formatting="%(asctime)s:%(levelname)-7s:%(name)s:%(message)s")
 
-logger = logging.getLogger("another_logger")
+logger = logging.get_logger("another_logger")
 
 logger.info("this message comes from a separate logger, note the name")
 
 # log to file
 #
-logging.basicConfig(filename="log.txt", filemode='w')
+logging.basic_config(filename="log.txt", filemode='w')
 
 logging.critical("last message")
 
@@ -78,7 +78,7 @@ logging.critical("last message")
 #
 print()
 
-logging.basicConfig(format="%(chrono)s:%(levelname)-7s:%(name)s:%(message)s")
+logging.basic_config(formatting="%(chrono)s:%(levelname)-7s:%(name)s:%(message)s")
 
 logging.info("first chrono message")
 logging.info("second chrono message")
